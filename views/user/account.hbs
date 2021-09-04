@@ -1,0 +1,89 @@
+<header class="nav-bar">
+  <section class="block-wrapper_nav-bar">
+    <a class="nav-bar__part-left" href="/">
+      <img src="../img/rak_schebetatel.svg" alt="" class="nav-bar__logo">
+    </a>
+    {{!-- {{#if likes}}
+    <p class="nav-bar__likes">Вы нащебетали {{likes}} лайка(ов)</p>
+    {{else}}
+    <p class="nav-bar__likes">Вы еще никого не лайкали</p>
+    {{/if}} --}}
+    <div class="nav-bar__part-right">
+      {{#if user}}
+      <p class="nav-bar__button nav-bar__button_active">Кабинет</p>
+      <a class="nav-bar__button" href="/">
+        Главная
+      </a>
+
+      <a class="nav-bar__button" href="/logout">
+        Выход
+      </a>
+
+      {{else}}
+      <a class="nav-bar__button" href="/user/userAuth">
+        Вход
+      </a>
+
+      <a class="nav-bar__button" href="/user/reg">
+        Регистрация
+      </a>
+
+      {{/if}}
+    </div>
+  </section>
+</header>
+
+<main class="main">
+  <section class="block-wrapper">
+    {{#if user}}
+    <form name="createForm" id="createForm">
+      <br>
+      <br>
+      <p class="event__tags">Здесь можно создать новый адрес и добавить описание</p>
+      <div class="input-bar__input_text input-bar_create_date">
+        <input name="text" placeholder="назовите туалет и опишите впечатления">
+      </div>
+
+      <div class="input-bar__input_text input-bar_create_name">
+        <button class="input-bar__button" type="submit">
+          Создать туалет
+        </button>
+      </div>
+    </form>
+    {{/if}}
+  </section>
+
+  <section id="events" class="block-wrapper">
+    {{!-- {{#each posts}}
+    <form id="deleteForm">
+      <div class="event">
+        <img src="{{this.pic}}" alt="" class="event__pic">
+
+        <p class="event__tags">{{this.text}}</p>
+
+        <p class="event__title">{{this.creator}}</p>
+
+        <span class="event__stats event__stats-date">
+          <img src="../img/svg/time.svg" alt="" class="event__icon">
+          <p class="event__text">{{this.createdAt}}</p>
+        </span>
+
+        <a class="event__stats event__stats-loc" href="">
+          <img src="../img/svg/like.svg" alt="" class="event__icon">
+          <p class="event__text">{{this.likes}}</p>
+        </a>
+      </div>
+      <br>
+      <button type="submit" class="event__stats-loc input-bar__button">
+        удалить
+      </button>
+      <a href="" class="event__stats-loc input-bar__button" id="modal-btn">
+        редактировать
+      </a>
+    </form>
+    {{/each}} --}}
+  </section>
+</main>
+<script defer src="/js/account.js"></script>
+{{!-- <script defer src="/js/createProductAcc.js"></script>
+<script defer src="/js/index-init.js"></script> --}}

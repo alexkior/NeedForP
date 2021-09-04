@@ -1,0 +1,42 @@
+<header class="nav-bar">
+  <section class="block-wrapper_nav-bar">
+    <a class="nav-bar__part-left" href="/">
+      <img src="../img/rak_schebetatel.svg" alt="" class="nav-bar__logo">
+    </a>
+
+    <div class="nav-bar__part-right">
+      <a class="nav-bar__button" href="/user/auth">
+        Войти
+      </a>
+
+      <a class="nav-bar__button" href="/">
+        Главная
+      </a>
+    </div>
+  </section>
+</header>
+
+<main class="main">
+  <section class="block-wrapper">
+    {{#if err}}<p style="color: red;">Введите данные полностью</p>{{/if}}
+    <form name="regForm" id="regForm" class="input-bar_signup">
+          <div class="input-bar__input_text input-bar_create_email">
+      <input type="email" name="email" placeholder="E-mail">
+      </div>
+
+      <div class="input-bar__input_text input-bar_create_firstName">
+      <input type="password" name="pass" placeholder="Пароль">
+      </div>
+
+      <div class="input-bar__input_text input-bar_create_city">
+      <input type="text" name="name" placeholder="Имя пользователя">
+      </div>
+
+      <button name="regBtn" type="submit" class="input-bar__button input-bar_create_lastName">
+        зарегистрироваться
+      </button>
+    </form>
+  </section>
+</main>
+
+<script defer src="/js/reg.js"></script>

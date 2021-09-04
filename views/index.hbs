@@ -1,0 +1,138 @@
+<header class="nav-bar">
+  <section class="block-wrapper_nav-bar">
+    <a class="nav-bar__part-left" href="/">
+      <img src="../img/rak__needForP_flat.svg" alt="" class="nav-bar__logo">
+    </a>
+    {{#if likes}}
+    <p class="nav-bar__likes">Вы нащебетали {{likes}} лайка(ов)</p>
+    {{else}}
+    <p class="nav-bar__likes"></p>
+    {{/if}}
+    <div class="nav-bar__part-right">
+      {{#if user}}
+      <a class="nav-bar__button nav-bar__button_active" href="/user/account">
+        Кабинет
+      </a>
+
+      <a class="nav-bar__button" href="/">
+        Главная
+      </a>
+
+      <a class="nav-bar__button" href="/logout">
+        Выход
+      </a>
+
+      {{else}}
+      <a class="nav-bar__button" href="/user/auth">
+        Вход
+      </a>
+
+      <a class="nav-bar__button" href="/user/reg">
+        Регистрация
+      </a>
+
+      {{/if}}
+    </div>
+  </section>
+</header>
+
+<main class="main">
+  {{#if user}}
+  <section class="block-wrapper_search">
+    <form name="createForm" id="createForm" class="input-bar_points">
+      <div class="input-bar__input_text-s input-bar_points_search-points">
+        <input name="rate" placeholder="поставьте оценку" class="obnuliator" type="number">
+      </div>
+
+      <div class="input-bar__input_text-s input-bar_points_search-tags">
+        <input name="text" placeholder="опишите впечатления" class="obnuliator">
+      </div>
+
+      <div class="input-bar__input_text-s input-bar_points_search-start">
+        <button class="input-bar__button" type="submit">
+          Создать туалет
+        </button>
+      </div>
+    </form>
+
+    <form class="input-bar_search" action="/search" id="search" method="POST">
+      {{!-- {{#if user}}
+      <a class="input-bar__button input-bar_search_search" id="modal-btn">
+        Создать мероприятие
+      </a>
+      {{else}}
+      <a class="input-bar__button_dead input-bar_search_search" href="/signUp">
+        Создать мероприятие
+      </a>
+      {{/if}} --}}
+      <div class="input-bar__input_select-m input-bar_search_search-place">
+        <select id="textSelect" class="browser-default obnuliator">
+          <option data-post value="1" disabled selected>Описания</option>
+          {{#each allPoints}}
+          <option data-id={{this.id}} value="{{this.id}}">{{this.text}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button class="input-bar__button input-bar__button_search input-bar_search_search-start" type="submit">
+        Поиск
+      </button>
+    </form>
+
+  </section>
+
+  {{else}}
+  <section class="block-wrapper_search-none">
+    <div class="input-bar__input_text-s input-bar_points_search-start">
+      <a class="input-bar__button" href="/user/auth">
+        Войти
+      </a>
+    </div>
+    <div class="input-bar__input_text-s input-bar_points_search-start">
+      <a class="input-bar__button" href="/user/reg">
+        Зарегистрироваться
+      </a>
+    </div>
+
+  </section>
+
+  {{/if}}
+
+
+
+
+  {{!-- {{#if user}}
+  <section class="block-wrapper">
+
+    <form name="createForm" id="createForm">
+      <br>
+      <p class="event__tags">Здесь можно создать новый адрес и добавить описание</p>
+      <div class="input-bar__input_text input-bar_create_date">
+        <input name="text" placeholder="назовите туалет и опишите впечатления">
+      </div>
+
+      <div class="input-bar__input_text input-bar_create_name">
+        <button class="input-bar__button" type="submit">
+          Создать туалет
+        </button>
+      </div>
+    </form>
+  </section>
+    {{/if}} --}}
+
+
+  <section class="block-wrapper">
+    <div id="map" class="map">
+
+    </div>
+  </section>
+</main>
+
+{{!-- <script defer src="/js/map.js"></script> --}}
+<script defer src="/js/index.js"></script>
+{{!-- <script defer src="/js/createPoint.js"></script> --}}
+{{!-- <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru-RU&amp;apikey=<a95d8a79-9d96-4095-a819-9cafd594585e>"
+  type="text/javascript"></script> --}}
+<script defer src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+{{!-- <script defer src="object_manager_filter.js" type="text/javascript"></script> --}}
+<script defer src="event_reverse_geocode.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/css/style.css">

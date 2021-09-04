@@ -1,0 +1,46 @@
+{
+  "name": "needforp",
+  "version": "1.0.0",
+  "description": "![rak__needForP-01](https://user-images.githubusercontent.com/63826857/131693670-d5ddf1a5-6624-4c91-90e5-88d459749951.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear; node app.js",
+    "dev": "clear; nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkior/needforp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexkior/needforp/issues"
+  },
+  "homepage": "https://github.com/alexkior/needforp#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-redis": "^6.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "faker": "^5.5.3",
+    "hbs": "^4.1.2",
+    "multer": "^1.4.3",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "random-latitude": "^1.0.1",
+    "random-longitude": "^1.0.1",
+    "redis": "^3.1.2",
+    "sequelize": "^6.6.5",
+    "session-file-store": "^1.5.0",
+    "ymaps": "^0.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  }
+}

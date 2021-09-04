@@ -1,0 +1,35 @@
+<header class="nav-bar">
+  <section class="block-wrapper_nav-bar">
+    <a class="nav-bar__part-left" href="/">
+      <img src="../img/rak_schebetatel.svg" alt="" class="nav-bar__logo">
+    </a>
+
+    <div class="nav-bar__part-right">  
+      <a class="nav-bar__button" href="/user/reg">
+      Регистрация
+      </a>
+
+      <a class="nav-bar__button" href="/">
+        Главная
+      </a>
+    </div>
+  </section>
+</header>
+<main class="main">
+  <section class="block-wrapper">
+  <form name="authForm" id="userAuthForm" class="input-bar_signin">
+    <div class="input-bar__input_text input-bar_create_email">
+    <input type="email" name="email" placeholder="E-mail">
+    </div>
+
+    <div class="input-bar__input_text input-bar_create_password">
+    <input type="password" name="pass" placeholder="Пароль">
+    </div>
+    <button class="input-bar__button input-bar_create_enter" name="authBtn" type="submit">
+      Войти
+    </button>
+  </form>
+</section>
+</main>
+
+  <script defer src="/js/auth.js"></script>
